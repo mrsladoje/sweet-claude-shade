@@ -209,8 +209,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
         float slashGH = charSz;         // slash glyph height (5x5 aspect)
         float gap = charSz * 0.3;
 
-        // Layout: star | gap | upper /\ | gap | lower /\ | gap | face
-        float hatH = starGH + gap + slashGH + gap + slashGH + gap;
+        // Layout: star | gap | /\ | gap | face
+        float hatH = starGH + gap + slashGH + gap;
         float faceW = sz;
         float faceH = sz * 10.0 / 18.0;
         float totalH = hatH + faceH;
@@ -240,18 +240,11 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
             if (hitStar(lp - sp, charSz)) hit = true;
         }
 
-        // Upper /\ row (closer together)
+        // Single /\ row
         if (!hit) {
-            float uY = starGH + gap;
-            if (hitSlashL(lp - vec2(faceW*0.35 - charSz*0.5, uY), charSz)) hit = true;
-            if (!hit && hitSlashR(lp - vec2(faceW*0.65 - charSz*0.5, uY), charSz)) hit = true;
-        }
-
-        // Lower /\ row (wider apart)
-        if (!hit) {
-            float lY = starGH + gap + slashGH + gap;
-            if (hitSlashL(lp - vec2(faceW*0.20 - charSz*0.5, lY), charSz)) hit = true;
-            if (!hit && hitSlashR(lp - vec2(faceW*0.80 - charSz*0.5, lY), charSz)) hit = true;
+            float sY = starGH + gap;
+            if (hitSlashL(lp - vec2(faceW*0.35 - charSz*0.5, sY), charSz)) hit = true;
+            if (!hit && hitSlashR(lp - vec2(faceW*0.65 - charSz*0.5, sY), charSz)) hit = true;
         }
 
         if (hit) col += CLAUDE_ORANGE * CLAUDE_BRIGHTNESS * tw;

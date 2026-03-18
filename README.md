@@ -16,9 +16,8 @@ A custom [Ghostty](https://ghostty.org/) shader featuring drifting `*` stars and
 - Everything rendered as bitmap glyphs in pure GLSL — no textures, no external assets
 
 ```
-         *
-       /   \
-     /       \
+       *
+     /   \
     ▐▛███▜▌
    ▝▜█████▛▘
      ▘▘ ▝▝
