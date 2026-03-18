@@ -4,6 +4,9 @@ A custom [Ghostty](https://ghostty.org/) shader featuring drifting `*` stars and
 
 ![ghostty](https://img.shields.io/badge/ghostty-shader-D97757?style=flat-square) ![glsl](https://img.shields.io/badge/pure-GLSL-333?style=flat-square) ![license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
+<img width="1512" height="949" alt="Screenshot 2026-03-18 at 8 12 38 PM" src="https://github.com/user-attachments/assets/4a12efa5-3dd2-45bc-a210-f1a5ae01fe67" />
+
+
 ## Features
 
 - **Twinkling `*` stars** in Claude orange and warm white
